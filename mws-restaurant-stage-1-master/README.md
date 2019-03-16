@@ -25,6 +25,6 @@ Service worker cache requires the server to be https. But the self-signed certif
 
 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --user-data-dir=/tmp/foo --ignore-certificate-errors --unsafely-treat-insecure-origin-as-secure=https://localhost:4443
 
-##Installation
+## Installation
 Download or Clone the Repository.
 Open index.html file to view the project in your browser.
