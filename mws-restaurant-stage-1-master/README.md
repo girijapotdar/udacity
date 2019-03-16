@@ -1,3 +1,12 @@
+# Instructions to use
+
+Create a https server to serve the files in this project.
+
+Service worker cache requires the server to be https. But the self-signed certificates are not considered valid. So https://localhost:4443 does not allow caching on chrome. To enable caching for testing purpose fire the following from terminal:
+
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --user-data-dir=/tmp/foo --ignore-certificate-errors --unsafely-treat-insecure-origin-as-secure=https://localhost:4443
+
+
 # Mobile Web Specialist Certification Course
 ---
 #### _Three Stage Course Material Project - Restaurant Reviews_
