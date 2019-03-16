@@ -20,9 +20,10 @@
             <h1><a href="/">Restaurant Reviews</a></h1>
         </nav>
         <!-- Beginning breadcrumb -->
-        <ul id="breadcrumb">
+        <ul aria-labelledby="breadcrumb" id="breadcrumb" aria-hidden="true">
             <li><a href="/">Home</a></li>
         </ul>
+        <label id="breadcrumb" class="aria-label">home breadcrumb</label>
         <!-- End breadcrumb -->
         <!-- End nav -->
     </header>
@@ -31,19 +32,24 @@
     <!-- Beginning main -->
     <main id="maincontent">
         <!-- Beginning map -->
-        <section id="map-container">
-            <div id="map"></div>
+        <section role="map_application" id="map-container" aria-hidden="true" aria-labelledby="aria-map">
+            <div role="map_application" id="map" aria-labelledby="aria-map"></div>
+            <label id="aria-map" class="aria-label">interactive map user interface</label>
         </section>
         <!-- End map -->
         <!-- Beginning restaurant -->
         <section id="restaurant-container">
-            <h1 id="restaurant-name"></h1>
+            <h1 id="restaurant-name" tabindex="0" aria-labelledby="restaurantcontainer"></h1>
+            <label id="restaurantcontainer" class="aria-label">Section for Restaurant Information</label>
             <div id="restaurant-flex">
                 <img id="restaurant-img">
                 <div id="restaurant-details">
-                    <p id="restaurant-cuisine"></p>
-                    <p id="restaurant-address"></p>
-                    <table id="restaurant-hours"></table>
+                    <p id="restaurant-cuisine" tabindex="0" aria-labelledby="cuisine"></p>
+                    <label id="cuisine" class="aria-label">Restaurant Cuisine</label>
+                    <p id="restaurant-address" tabindex="0" aria-labelledby="address"></p>
+                    <label id="address" class="aria-label">Restaurant Address</label>
+                    <table id="restaurant-hours" tabindex="0" aria-labelledby="restaurant_hours"></table>
+                    <label id="restaurant_hours" class="aria-label">Restaurant Hours</label>
                 </div>
             </div>
         </section>
@@ -57,9 +63,11 @@
     <!-- End main -->
 
     <!-- Beginning footer -->
-    <footer id="footer">
+    <footer id="footer" aria-labelledby="Restaurant_reviews_label" aria-hidden="true">
         Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
     </footer>
+    <label id="Restaurant_reviews_label" class="aria-label">Copyright restaurant review label for footer</label>
+
     <!-- End footer -->
     <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
     <!-- Beginning scripts -->

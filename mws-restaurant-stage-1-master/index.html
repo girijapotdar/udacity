@@ -19,18 +19,22 @@
 
     <main id="maincontent">
 
-        <section id="map-container">
-            <div id="map"></div>
+        <section role="map_application" id="map-container" aria-hidden="true" aria-labelledby="aria-map">
+            <div role="map_application" id="map" aria-labelledby="aria-map"></div>
+            <label id="aria-map" class="aria-label">interactive map user interface</label>
         </section>
         <section>
             <div class="filter-options">
-                <h2>Filter Results</h2>
-                <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+                <h2 tabindex="0" aria-labelledby="aria-filterresults">Filter Results</h2>
+                <label id="aria-filterresults" class="aria-label">Section Filter Results</label>
+                <select id="neighborhoods-select" name="neighborhoods" aria-labelledby="aria-neighborhoods" onchange="updateRestaurants()">
                     <option value="all">All Neighborhoods</option>
-                  </select>
-                <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+                    <label id="aria-neighborhoods" class="aria-label">Filter results by neighbourhood</label>
+                </select>
+                <select id="cuisines-select" name="cuisines" aria-labelledby="aria-cuisines-select" onchange="updateRestaurants()">
                     <option value="all">All Cuisines</option>
-                  </select>
+                    <label id="aria-cuisines-select" class="aria-label">Filter results by All Cuisines</label>
+                </select>
             </div>
             <ul id="restaurants-list"></ul>
         </section>
@@ -41,9 +45,10 @@
     <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initMap"></script> -->
 
 
-    <footer id="footer">
+    <footer id="footer" aria-labelledby="Restaurant_reviews_label" aria-hidden="true">
         Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
     </footer>
+    <label id="Restaurant_reviews_label" class="aria-label">Copyright restaurant review label for footer</label>
 
 </body>
 

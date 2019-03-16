@@ -1,3 +1,25 @@
+/* minor break points for font change */
+
+@media screen and (min-width: 400px) {
+    nav h1 a,
+    #restaurant-name {
+        font-size: 14pt;
+    }
+    .review_name,
+    #reviews-container h2 {
+        font-size: 18pt;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .review_date {
+        font-size: 8pt;
+    }
+}
+
+
+/* set max-width for the body and apply approprite margins when min-with is 900px */
+
 @media screen and (min-width: 900px) {
     #restaurant-img {
         width: 50%;

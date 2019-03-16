@@ -1,21 +1,5 @@
 var version = 0
 var cacheName = "restaurant-cache-" + version;
-//var urls = ['service-worker.js'];
-
-// var urls = [
-//     'css/responsive.css',
-//     'service-worker.js'
-// ]
-
-
-// this.addEventListener('install', event => {
-//     event.waitUntil(
-//         caches.open(cacheName).then(function(cache) {
-//             return cache.addAll(urls);
-//         })
-//     );
-// });
-
 
 this.addEventListener('fetch', event => {
     var request = event.request;

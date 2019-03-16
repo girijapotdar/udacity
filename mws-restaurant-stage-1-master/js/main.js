@@ -8,11 +8,10 @@ var markers = []
  * Service worker caching for JS, CSS, Images and HTML 
  */
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js', { scope: '/' }).then(function(regObj) {
-        console.log('ServiceWorker registration successful with scope: ', regObj.scope);
-    }).catch(function(err) {
-        console.log('ServiceWorker registration failed');
-        console.log("%O", err);
+    navigator.serviceWorker.register('service-worker.js').then(function(regObj) {
+        console.log('ServiceWorker registration successful: ', regObj.scope);
+    }).catch(function(e) {
+        console.log('ServiceWorker registration failed', e);
     });
 }
 
@@ -189,9 +188,19 @@ createRestaurantHTML = (restaurant) => {
     li.append(address);
 
     const more = document.createElement('a');
+    let label_attribute = document.createAttribute("aria-labelledby");
+    let restaurant_name = restaurant.name;
+    label_attribute.value = restaurant_name.replace(/\s+/g, '') + "_label";
+    more.setAttributeNode(label_attribute);
     more.innerHTML = 'View Details';
+
+    const aria_label = document.createElement('label');
+    aria_label.id = restaurant_name.replace(/\s+/g, '') + "_label";
+    aria_label.className = "aria-label";
+    aria_label.innerHTML = "Link: Restaurant " + restaurant.name + " Details. Neighborhood: " + restaurant.neighborhood + " Address: " + restaurant.address;
     more.href = DBHelper.urlForRestaurant(restaurant);
-    li.append(more)
+    li.append(more);
+    li.append(aria_label)
 
     return li
 }
